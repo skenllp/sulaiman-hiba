@@ -139,6 +139,9 @@ footer h2{font-size:clamp(3.2rem,16vw,4.6rem);line-height:1.15;margin:22px 0 22p
 footer .fcer{color:var(--gold);letter-spacing:.3em;font-family:var(--head)}
 footer .fdate{font-family:var(--head);font-size:1.5rem;letter-spacing:.12em;margin:12px 0 30px}
 footer .fbless{max-width:320px;font-style:italic;font-size:1.2rem;line-height:1.6;color:var(--beige)}
+footer .dev{font-size:.9rem;margin-top:28px;color:var(--greige);letter-spacing:.05em}
+footer .dev a{color:var(--gold);text-decoration:none;transition:color .25s,text-shadow .25s}
+footer .dev a:hover{color:var(--ivory);text-shadow:0 0 8px #c5a15a88}
 
 @keyframes blink{50%{opacity:.35}}
 @media (min-width:600px){.fgrid{grid-template-columns:1fr 1fr;max-width:none}.famsec>*{max-width:900px}.pol-a{width:80%}}
