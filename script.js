@@ -2,18 +2,17 @@
 var GROOM = "Sulaiman Ahmed";
 var BRIDE = "Hiba Parveen";
 
-/* NIKKAH_START — APPROXIMATE time (about 4:00 PM IST, around Asr in Kerala in early January).
+/* NIKAH_START — APPROXIMATE time (about 4:00 PM IST, around Asr in Kerala in early January).
    Change it once the exact time is confirmed, e.g. "2027-01-02T16:45:00+05:30".
    If emptied: countdown shows days only and "Add to Calendar" is disabled. */
-var NIKKAH_START = "2027-01-02T16:00:00+05:30";   /* approximate */
-var NIKKAH_DURATION_MIN = 120;   /* calendar event length once time is set */
+var NIKAH_START = "2027-01-02T16:00:00+05:30";   /* approximate */
+var NIKAH_DURATION_MIN = 120;   /* calendar event length once time is set */
 
-/* Google Maps link for Kolavayal Juma Masjid (not supplied yet).
-   Paste the share link here to enable the "View Location" button. */
-var MAP_URL = "";               /* TODO: add Google Maps link */
+/* Google Maps link for Kolavayal Juma Masjid (powers the "View Location" button). */
+var MAP_URL = "https://maps.app.goo.gl/cG3tqAPcxwDQ9R7g6";
 /* ====================== */
 (function(){
-  var NIKKAH_DATE = "2027-01-02";
+  var NIKAH_DATE = "2027-01-02";
   var names = "Sulaiman & Hiba";
   var env = document.getElementById("env");
   var music = document.getElementById("bgMusic"), mt = document.getElementById("mtoggle");
@@ -47,18 +46,18 @@ var MAP_URL = "";               /* TODO: add Google Maps link */
 
   /* countdown */
   var cd=document.querySelectorAll("#cd b"), cdnote=document.getElementById("cdnote");
-  var hasTime=!!NIKKAH_START && !isNaN(new Date(NIKKAH_START));
+  var hasTime=!!NIKAH_START && !isNaN(new Date(NIKAH_START));
   function pad(x){return String(x).padStart(2,"0")}
   function tick(){
     var v;
     if(hasTime){
-      var d=new Date(NIKKAH_START)-new Date(); if(d<0)d=0;
+      var d=new Date(NIKAH_START)-new Date(); if(d<0)d=0;
       v=[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60].map(pad);
     }else{
       /* date-only fallback: whole days to 2 Jan 2027 (IST); no time of day is assumed */
-      var t=Date.parse(NIKKAH_DATE+"T00:00:00+05:30"), n=Date.now();
+      var t=Date.parse(NIKAH_DATE+"T00:00:00+05:30"), n=Date.now();
       var days=Math.max(0,Math.ceil((t-n)/864e5));
-      v=[pad(days),"--","--","--"]; if(cdnote){cdnote.textContent="Live countdown begins once the Nikkah time is confirmed.";cdnote.hidden=false}
+      v=[pad(days),"--","--","--"]; if(cdnote){cdnote.textContent="Live countdown begins once the Nikah time is confirmed.";cdnote.hidden=false}
     }
     v.forEach(function(x,i){if(cd[i].textContent!==x){cd[i].textContent=x;if(hasTime&&i===3){cd[i].classList.remove("pop");void cd[i].offsetWidth;cd[i].classList.add("pop")}}});
   }
@@ -82,9 +81,9 @@ var MAP_URL = "";               /* TODO: add Google Maps link */
 
     var a=document.getElementById("addcal"),note=document.getElementById("calnote");
     if(hasTime){
-      var s=new Date(NIKKAH_START),e=new Date(s.getTime()+NIKKAH_DURATION_MIN*6e4);
+      var s=new Date(NIKAH_START),e=new Date(s.getTime()+NIKAH_DURATION_MIN*6e4);
       var f=function(x){return x.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")};
-      a.href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Nikkah – "+names+" (after Asr)")+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent("After Asr Prayer (approximate time). Reception to follow after Nikkah.")+"&location="+encodeURIComponent("Kolavayal Juma Masjid");
+      a.href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Nikah – "+names+" (after Asr)")+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent("Nikah – after Asr Prayer (approximate time). Reception to follow after Nikah.\nLocation: "+MAP_URL)+"&location="+encodeURIComponent("Kolavayal Juma Masjid");
       a.removeAttribute("aria-disabled"); if(note)note.hidden=true;
       if(cdnote)cdnote.hidden=false;
     }
