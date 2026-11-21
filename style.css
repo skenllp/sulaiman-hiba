@@ -51,7 +51,7 @@ body.shown .a1{animation-delay:.7s}body.shown .a2{animation-delay:1s}body.shown 
 .frame img{width:100%;aspect-ratio:800/1421;object-fit:cover}
 p.msg{font-style:italic;font-size:1.2rem;line-height:1.65}
 .wl{font-style:normal;font-family:var(--head);letter-spacing:.1em;font-weight:600;font-size:.95rem}
-.sign{font-size:2.3rem;line-height:1.5;display:inline-block;margin-top:4px;font-style:normal}
+.sign{font-size:clamp(1.25rem,6.4vw,2.3rem);line-height:1.5;display:block;margin-top:4px;font-style:normal;white-space:nowrap}
 h2.script{font-size:2.7rem;margin:26px 0 12px;line-height:1.2}
 
 /* countdown */
