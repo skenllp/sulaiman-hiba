@@ -1,3 +1,4 @@
+@font-face{font-family:'Great Vibes';src:url('assets/GreatVibes.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 :root{
   --head:'Playfair Display',Georgia,serif;
   --script:'Great Vibes','Pinyon Script','Snell Roundhand',cursive;
@@ -7,10 +8,10 @@
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
 button,a,#env{touch-action:manipulation}
-body{background:var(--char);color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+body{background:var(--char);color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;
 padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%;height:auto;display:block}
-.script{font-family:var(--script);font-weight:400;text-transform:capitalize;letter-spacing:.01em}
+.script{font-family:var(--script);font-weight:400;font-feature-settings:'ss02' 1;text-transform:capitalize;letter-spacing:.01em}
 .caps{letter-spacing:.22em;text-transform:uppercase;font-size:.8rem}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 section{max-width:520px;margin:0 auto;text-align:center;padding:60px 26px}
@@ -103,7 +104,7 @@ h2.script{font-size:2.7rem;margin:26px 0 12px;line-height:1.2}
 .fgrid{display:grid;gap:26px;margin-top:24px}
 .fbox{background:var(--ivory);border:1px solid var(--gold);padding:34px 22px;color:var(--ink);box-shadow:0 0 0 6px var(--ivory),0 0 0 7px #c5a15a99,0 12px 28px #0006;margin:0 7px}
 .fbox .tag{font-family:var(--head);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:#8a6d33;font-weight:600}
-.fbox h4{font-family:var(--script);font-weight:400;text-transform:capitalize;font-size:2.9rem;line-height:1.15;color:var(--char);margin-top:12px}
+.fbox h4{font-family:var(--script);font-weight:400;font-feature-settings:'ss02' 1;text-transform:capitalize;font-size:2.9rem;line-height:1.15;color:var(--char);margin-top:12px}
 .fbox .rel{font-style:italic;font-size:1rem;color:#6b5444;margin-top:16px}
 .fbox .par{font-family:var(--head);font-size:1.2rem;font-weight:600;letter-spacing:.02em;margin-top:4px;line-height:1.4}
 .fbox .gp{font-size:1.1rem;line-height:1.5;color:#4f3a2c;margin-top:4px}
@@ -176,7 +177,7 @@ body.shown .scrolldn.a6{animation-name:rise}
 @media (max-width:340px){.hero .meta{letter-spacing:.1em}.cd{font-size:1.6rem}}
 @media (max-height:640px){.hero{padding-bottom:84px}.h-nikah{margin-top:20px}}
 
-.ord{text-transform:lowercase;letter-spacing:.08em}
+.ord{text-transform:lowercase;letter-spacing:.04em}
 .hero .h-venue{letter-spacing:.16em}
 
 /* childhood photo: show the whole picture, full width, no tilt/crop */
@@ -184,3 +185,13 @@ body.shown .scrolldn.a6{animation-name:rise}
 .pol-a{width:100%;transform:none;padding:10px;align-self:stretch}
 .pol-a img{width:100%;height:auto;aspect-ratio:900/1125;object-fit:contain}
 @media (min-width:600px){.pol-a{width:100%}}
+
+/* hero: bolder, larger date + venue */
+.hero .meta{font-size:clamp(.85rem,3.9vw,1.05rem);letter-spacing:.14em;gap:2px}
+.hero .h-date{font-weight:700;font-size:clamp(.98rem,4.6vw,1.3rem);letter-spacing:.1em;color:#fff}
+.hero .h-venue{font-weight:700;font-size:clamp(.95rem,4.4vw,1.2rem);letter-spacing:.1em;color:#fff}
+.hero .meta span:nth-child(2){font-weight:600}
+@media (max-width:420px){.hero .meta{font-size:clamp(.85rem,3.9vw,1.05rem);letter-spacing:.14em}.hero .h-date,.hero .h-venue{letter-spacing:.08em}}
+.fbox h4{margin-top:24px;line-height:1.25}
+.fbox .ln{margin-top:12px}
+.script,.fbox h4{word-spacing:.14em}
