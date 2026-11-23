@@ -175,3 +175,12 @@ body.shown .scrolldn.a6{animation-name:rise}
 }
 @media (max-width:340px){.hero .meta{letter-spacing:.1em}.cd{font-size:1.6rem}}
 @media (max-height:640px){.hero{padding-bottom:84px}.h-nikah{margin-top:20px}}
+
+.ord{text-transform:lowercase;letter-spacing:.08em}
+.hero .h-venue{letter-spacing:.16em}
+
+/* childhood photo: show the whole picture, full width, no tilt/crop */
+.gal-wrap{max-width:460px;width:100%}
+.pol-a{width:100%;transform:none;padding:10px;align-self:stretch}
+.pol-a img{width:100%;height:auto;aspect-ratio:900/1125;object-fit:contain}
+@media (min-width:600px){.pol-a{width:100%}}

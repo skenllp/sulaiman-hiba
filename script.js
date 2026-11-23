@@ -9,7 +9,7 @@ var NIKAH_START = "2027-01-02T16:00:00+05:30";   /* approximate */
 var NIKAH_DURATION_MIN = 120;   /* calendar event length once time is set */
 
 /* Google Maps link for Kolavayal Juma Masjid (powers the "View Location" button). */
-var MAP_URL = "https://maps.app.goo.gl/cG3tqAPcxwDQ9R7g6";
+var MAP_URL = "https://maps.app.goo.gl/fbqPc8yyzes4hxyG6?g_st=iwb";
 /* ====================== */
 (function(){
   var NIKAH_DATE = "2027-01-02";
@@ -76,7 +76,7 @@ var MAP_URL = "https://maps.app.goo.gl/cG3tqAPcxwDQ9R7g6";
     ["Su","Mo","Tu","We","Th","Fr","Sa"].forEach(function(d){H+='<div class="h">'+d+'</div>'});
     var first=new Date(2027,0,1).getDay(),n=31;
     for(var i=0;i<first;i++)H+='<div></div>';
-    for(var d=1;d<=n;d++)H+='<div><div class="x'+(d===2?' on':'')+'"'+(d===2?' aria-label="Saturday, 2 January 2027"':'')+'>'+d+'</div></div>';
+    for(var d=1;d<=n;d++)H+='<div><div class="x'+(d===2?' on':'')+'"'+(d===2?' aria-label="Saturday, 2nd January 2027"':'')+'>'+d+'</div></div>';
     g.innerHTML=H;
 
     var a=document.getElementById("addcal"),note=document.getElementById("calnote");
